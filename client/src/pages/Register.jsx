@@ -37,77 +37,86 @@ const Register = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center h-screen"
+      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
       style={{
         backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
       }}
     >
-      <div className="text-center mt-5">
-        <img
-          className="w-80 h-70 mb-15 mx-auto min-w-[150px]"
-          src={logo}
-          alt="logo"
-        />
-        <form onSubmit={registerUser} className="mx-auto mb-5 mt-4 max-w-md">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold mt-4 mb-2 text-gray-600 text-left">
-              Register
-            </h1>
-            <p className="text-gray-500 text-left">
-              Already have an account?{" "}
-              <span
-                onClick={() => navigate("/")}
-                className="text-lime-500 cursor-pointer"
-              >
-                Sign In
-              </span>
-            </p>
-          </div>
-          <div className="text-left">
-            <span>Full Name</span>
+      <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <div className="text-center mb-6">
+          <img
+            className="w-24 h-auto mx-auto mb-4"
+            src={logo}
+            alt="logo"
+          />
+          <h1 className="text-3xl font-bold text-gray-700">Register</h1>
+          <p className="text-lg text-gray-600 mt-3">
+            Already have an account?{" "}
+            <span
+              onClick={() => navigate("/")}
+              className="text-blue-400 hover:text-blue-700 font-bold cursor-pointer ml-1 font-medium"
+            >
+              login
+            </span>
+          </p>
+        </div>
+        <form onSubmit={registerUser} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Full Name
+            </label>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Full Name"
+              placeholder="Enter your full name"
               type="text"
-              className="w-full px-4 py-4 border rounded-lg mb-4"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
             />
           </div>
-          <div className="text-left">
-            <span>Email</span>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
+              placeholder="Enter your email"
               type="email"
-              className="w-full px-4 py-4 border rounded-lg mb-4"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
             />
           </div>
-          <div className="text-left">
-            <span>Role</span>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Role
+            </label>
             <input
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              placeholder="Role"
+              placeholder="Enter your role"
               type="text"
-              className="w-full px-4 py-4 border rounded-lg mb-4"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
             />
           </div>
-          <div className="text-left">
-            <span>Password</span>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
+              placeholder="Enter your password"
               type="password"
-              className="w-full px-4 py-4 border rounded-lg mb-4"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
             />
           </div>
-          <div className="flex justify-between">
+          <div className="flex flex-col items-center">
             <button
               type="submit"
-              className="bg-lime-500 text-white py-2 px-4 rounded-sm"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Register
             </button>
